@@ -18,6 +18,12 @@
 
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a class="navbar-brand" href="home.html">Admin page</a>
         </div>
         <!-- /.navbar-header -->
@@ -83,24 +89,24 @@
                                         <td>DV1</td>
                                         <td>Đơn vị 1</td>
                                         <td>
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#departModal"><span class="fa fa-pencil"></span></button>&nbsp;&nbsp;
-                                            <a href="#" onclick="return window.confirm('Are you sure?');"><button type="button" class="btn btn-primary"><span class="fa fa-trash"></span></button></a>
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#departModal" onclick="edit(this);"><span class="fa fa-pencil"></span></button>&nbsp;&nbsp;
+                                            <a href="#" onclick="del(this);"><button type="button" class="btn btn-danger"><span class="fa fa-trash"></span></button></a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>DV2</td>
                                         <td>Đơn vị 2</td>
                                         <td>
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#departModal"><span class="fa fa-pencil"></span></button>&nbsp;&nbsp;
-                                            <a href="#" onclick="return window.confirm('Are you sure?');"><button type="button" class="btn btn-primary"><span class="fa fa-trash"></span></button></a>
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#departModal" onclick="edit(this);"><span class="fa fa-pencil"></span></button>&nbsp;&nbsp;
+                                            <a href="#" onclick="del(this);"><button type="button" class="btn btn-danger"><span class="fa fa-trash"></span></button></a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>DV3</td>
                                         <td>Đơn vị 3</td>
                                         <td>
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#departModal"><span class="fa fa-pencil"></span></button>&nbsp;&nbsp;
-                                            <a href="#" onclick="return window.confirm('Are you sure?');"><button type="button" class="btn btn-primary"><span class="fa fa-trash"></span></button></a>
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#departModal" onclick="edit(this);"><span class="fa fa-pencil"></span></button>&nbsp;&nbsp;
+                                            <a href="#" onclick="del(this);"><button type="button" class="btn btn-danger"><span class="fa fa-trash"></span></button></a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -126,7 +132,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-primary" onclick="add();">Thêm</button>
                     </form>
                 </div>
                 <!-- end content -->
@@ -135,30 +141,32 @@
         </div>
         <!-- row -->
         <div class="modal fade" id="departModal">
-            <div class="modal-dialog modal-dialog-centered" style="width:60%">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Sửa loại hợp đồng</h4>
-                        <button type="button" class="close" data-dismiss="modal" style="margin-top:-20px">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Mã đơn vị:</label>
-                                    <input type="text" class="form-control" placeholder="Nhập mã đơn vị" id="idDepartModal" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Tên đơn vị:</label>
-                                    <input type="text" class="form-control" placeholder="Nhập tên đơn vị" id="nameDepartModal" required>
+            <div class="vertical-alignment-helper">
+                <div class="modal-dialog vertical-align-center" style="width:60%">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Sửa loại hợp đồng</h4>
+<!--                            <button type="button" class="close" data-dismiss="modal" style="margin-top:-20px">&times;</button>-->
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Mã đơn vị:</label>
+                                        <input type="text" class="form-control" placeholder="Nhập mã đơn vị" id="idDepartModal" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Tên đơn vị:</label>
+                                        <input type="text" class="form-control" placeholder="Nhập tên đơn vị" id="nameDepartModal" required>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Lưu</button>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Lưu</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -183,7 +191,43 @@ $(document).ready(function(){
     });
   });
 });
+function add() {
+    $("#tableBody").append("<tr>" +
+        "<td>" + $("#idDepart").val() + "</td>" +
+        "<td>" + $("#nameDepart").val() + "</td>" +
+        "<td><button type='button' class='btn btn-primary' data-toggle='modal' data-target='#departModal' onclick='edit(this);'><span class='fa fa-pencil'></span></button>&nbsp;&nbsp; <a href='#'><button type='button' class='btn btn-danger' onclick='del(this);'><span class='fa fa-trash'></span></button></a> </td>");
+}
+function del(e) {
+    var confirm = window.confirm("Are you sure ?");
+    if (confirm == true) {
+        $(e).parents("tr").remove();
+    }
+}
+function edit(e) {
+    var row = $(e).parents("tr");
+    var cols = row.children("td");
+    $("#idDepartModal").val($(cols[0]).text());
+    $("#nameDepartModal").val($(cols[1]).text());
+}
 </script>
 </body>
+<style>
+.modal {
+}
+.vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+}
+.vertical-align-center {
+    display: table-cell;
+    vertical-align: middle;
+}
+.modal-content {
+    width:inherit;
+    height:inherit;
+    margin: 0 auto;
+}
+</style>
 <script lang="javascript">var __vnp = {code : 5729,key:'', secret : '054acab78a785343c74937f71d68e97d'};(function() {var ga = document.createElement('script');ga.type = 'text/javascript';ga.async=true; ga.defer=true;ga.src = '//core.vchat.vn/code/tracking.js';var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga, s[0]);})();</script>
 </html>

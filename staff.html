@@ -18,7 +18,13 @@
 
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="navbar-header">
-            <a class="navbar-brand" href="index.html">Admin page</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home.html">Admin page</a>
         </div>
         <!-- navbar-header -->
         <div class="navbar-default navbar-static-side">
@@ -70,88 +76,90 @@
                     <div class="panel panel-primary" style="margin-top:20px">
                         <div class="panel-heading">Danh sách nhân viên</div>
                         <div class="panel-body">
-                            <table class="table table-bordered table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Mã nhân viên</th>
-                                        <th>Họ tên</th>
-                                        <th>Năm sinh</th>
-                                        <th>Số điện thoại</th>
-                                        <th>Chức vụ</th>
-                                        <th>Đơn vị</th>
-                                        <th>Trình độ</th>
-                                        <th>Thao tác</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="tableBody">
-                                    <tr>
-                                        <td>1001</td>
-                                        <td>Le Viet Tho</td>
-                                        <td>2000</td>
-                                        <td>123456</td>
-                                        <td>Giám đốc</td>
-                                        <td>IT</td>
-                                        <td>Đại học</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staffModal"><span class="fa fa-pencil"></span></button>&nbsp;&nbsp;
-                                            <a href="#" onclick="return window.confirm('Are you sure?');"><button type="button" class="btn btn-primary"><span class="fa fa-trash"></span></button></a>
-                                        </td>
-                                    </tr>
+                            <div class="table-wrapper-scroll-y">
+                                <table class="table table-bordered table-hover table-responsive">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã nhân viên</th>
+                                            <th>Họ tên</th>
+                                            <th>Năm sinh</th>
+                                            <th>Số điện thoại</th>
+                                            <th>Chức vụ</th>
+                                            <th>Đơn vị</th>
+                                            <th>Trình độ</th>
+                                            <th>Thao tác</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tableBody">
+                                        <tr>
+                                            <td>1001</td>
+                                            <td>Le Viet Tho</td>
+                                            <td>2000</td>
+                                            <td>123456</td>
+                                            <td>Giám đốc</td>
+                                            <td>IT</td>
+                                            <td>Đại học</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staffModal" onclick="edit(this);"><span class="fa fa-pencil"></span></button>&nbsp;&nbsp;
+                                                <a href="#" onclick="del(this);"><button type="button" class="btn btn-danger"><span class="fa fa-trash"></span></button></a>
+                                            </td>
+                                        </tr>
 
-                                    <tr>
-                                        <td>1001</td>
-                                        <td>Le Viet Tho</td>
-                                        <td>2000</td>
-                                        <td>123456</td>
-                                        <td>Giám đốc</td>
-                                        <td>IT</td>
-                                        <td>Đại học</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staffModal"><span class="fa fa-pencil"></span></button>&nbsp;&nbsp;
-                                            <a href="#" onclick="return window.confirm('Are you sure?');"><button type="button" class="btn btn-primary"><span class="fa fa-trash"></span></button></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>1001</td>
-                                        <td>Le Viet Tho</td>
-                                        <td>2000</td>
-                                        <td>123456</td>
-                                        <td>Giám đốc</td>
-                                        <td>IT</td>
-                                        <td>Đại học</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staffModal"><span class="fa fa-pencil"></span></button>&nbsp;&nbsp;
-                                            <a href="#" onclick="return window.confirm('Are you sure?');"><button type="button" class="btn btn-primary"><span class="fa fa-trash"></span></button></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>1001</td>
-                                        <td>Le Viet Tho</td>
-                                        <td>2000</td>
-                                        <td>123456</td>
-                                        <td>Giám đốc</td>
-                                        <td>IT</td>
-                                        <td>Đại học</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staffModal"><span class="fa fa-pencil"></span></button>&nbsp;&nbsp;
-                                            <a href="#" onclick="return window.confirm('Are you sure?');"><button type="button" class="btn btn-primary"><span class="fa fa-trash"></span></button></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>1001</td>
-                                        <td>Le Viet Tho</td>
-                                        <td>2000</td>
-                                        <td>123456</td>
-                                        <td>Giám đốc</td>
-                                        <td>IT</td>
-                                        <td>Đại học</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staffModal"><span class="fa fa-pencil"></span></button>&nbsp;&nbsp;
-                                            <a href="#" onclick="return window.confirm('Are you sure?');"><button type="button" class="btn btn-primary"><span class="fa fa-trash"></span></button></a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                        <tr>
+                                            <td>1001</td>
+                                            <td>Le Viet Tho</td>
+                                            <td>2000</td>
+                                            <td>123456</td>
+                                            <td>Giám đốc</td>
+                                            <td>IT</td>
+                                            <td>Đại học</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staffModal" onclick="edit(this);"><span class="fa fa-pencil"></span></button>&nbsp;&nbsp;
+                                                <a href="#" onclick="del(this);"><button type="button" class="btn btn-danger"><span class="fa fa-trash"></span></button></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1001</td>
+                                            <td>Le Viet Tho</td>
+                                            <td>2000</td>
+                                            <td>123456</td>
+                                            <td>Giám đốc</td>
+                                            <td>IT</td>
+                                            <td>Đại học</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staffModal" onclick="edit(this);"><span class="fa fa-pencil"></span></button>&nbsp;&nbsp;
+                                                <a href="#" onclick="del(this);"><button type="button" class="btn btn-danger"><span class="fa fa-trash"></span></button></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1001</td>
+                                            <td>Le Viet Tho</td>
+                                            <td>2000</td>
+                                            <td>123456</td>
+                                            <td>Giám đốc</td>
+                                            <td>IT</td>
+                                            <td>Đại học</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staffModal" onclick="edit(this);"><span class="fa fa-pencil"></span></button>&nbsp;&nbsp;
+                                                <a href="#" onclick="del(this);"><button type="button" class="btn btn-danger"><span class="fa fa-trash"></span></button></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1001</td>
+                                            <td>Le Viet Tho</td>
+                                            <td>2000</td>
+                                            <td>123456</td>
+                                            <td>Giám đốc</td>
+                                            <td>IT</td>
+                                            <td>Đại học</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staffModal" onclick="edit(this);"><span class="fa fa-pencil"></span></button>&nbsp;&nbsp;
+                                                <a href="#" onclick="del(this);"><button type="button" class="btn btn-danger"><span class="fa fa-trash"></span></button></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                             <ul class="pagination">
                                 <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
                                 <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
@@ -215,7 +223,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Chức vụ:</label>
-                                    <select class="form-control" name="position">
+                                    <select class="form-control" name="position" id="positionId">
                                         <option>Chức vụ 1</option>
                                         <option>Chức vụ 2</option>
                                         <option>Chức vụ 3</option>
@@ -223,7 +231,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Đơn vị:</label>
-                                    <select class="form-control" name="department">
+                                    <select class="form-control" name="department" id="departmentId">
                                         <option>Đơn vị 1</option>
                                         <option>Đơn vị 2</option>
                                         <option>Đơn vị 3</option>
@@ -239,7 +247,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Trình độ:</label>
-                                    <select class="form-control" name="level">
+                                    <select class="form-control" name="level" id="levelId">
                                         <option>Đại học</option>
                                         <option>Cao đẳng</option>
                                     </select>
@@ -247,7 +255,7 @@
 
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-primary" onclick="add();">Thêm</button>
                     </form>
                 </div>
                 <!-- end content -->
@@ -256,103 +264,105 @@
         </div>
         <!-- row -->
         <div class="modal fade" id="staffModal">
-            <div class="modal-dialog modal-dialog-centered" style="width:60%">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Sửa loại hợp đồng</h4>
-                        <button type="button" class="close" data-dismiss="modal" style="margin-top:-20px">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Mã nhân viên</label>
-                                    <input type="text" class="form-control" placeholder="Nhập mã nhân viên" id="codeModal" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Họ tên:</label>
-                                    <input type="text" class="form-control" placeholder="Nhập họ tên" id="nameModal" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Năm sinh:</label>
-                                    <input type="date" class="form-control" placeholder="Nhập năm sinh" id="dobModal" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Địa chỉ:</label>
-                                    <input type="text" class="form-control" placeholder="Nhập địa chỉ" id="addressModal" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Quê quán:</label>
-                                    <input type="text" class="form-control" placeholder="Nhập quê quán" id="hometownModal" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Số điện thoại:</label>
-                                    <input type="text" class="form-control" placeholder="Nhập số điện thoại" id="phoneModal" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Email:</label>
-                                    <input type="text" class="form-control" placeholder="Nhập email" id="emailModal" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Tình trạng hôn nhân:</label>
-                                    <select class="form-control" id="statusModal" name="statusListModal">
-                                        <option>Độc thân</option>
-                                        <option>Đã kết hôn</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Só CMND:</label>
-                                    <input type="text" class="form-control" placeholder="Nhập số cmnd" id="idNumModal" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Ngày cấp:</label>
-                                    <input type="date" class="form-control" placeholder="Nhập ngày cấp" id="dateModal" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Nơi cấp:</label>
-                                    <input type="text" class="form-control" placeholder="Nhập nơi cấp" id="supplierModal" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Chức vụ:</label>
-                                    <select class="form-control" name="positionModal">
-                                        <option>Chức vụ 1</option>
-                                        <option>Chức vụ 2</option>
-                                        <option>Chức vụ 3</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Đơn vị:</label>
-                                    <select class="form-control" name="departmentModal">
-                                        <option>Đơn vị 1</option>
-                                        <option>Đơn vị 2</option>
-                                        <option>Đơn vị 3</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Loại hợp đồng:</label>
-                                    <select class="form-control" name="contractTypeModal">
-                                        <option>Loại hợp đồng 1</option>
-                                        <option>Loại hợp đồng 2</option>
-                                        <option>Loại hợp đồng 3</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Trình độ:</label>
-                                    <select class="form-control" name="levelModal">
-                                        <option>Đại học</option>
-                                        <option>Cao đẳng</option>
-                                    </select>
-                                </div>
-
-                            </div>
+            <div class="vertical-alignment-helper">
+                <div class="modal-dialog vertical-align-center" style="width:60%">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Sửa loại hợp đồng</h4>
+<!--                            <button type="button" class="close" data-dismiss="modal" style="margin-top:-20px">&times;</button>-->
                         </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Mã nhân viên</label>
+                                        <input type="text" class="form-control" placeholder="Nhập mã nhân viên" id="codeModal" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Họ tên:</label>
+                                        <input type="text" class="form-control" placeholder="Nhập họ tên" id="nameModal" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Năm sinh:</label>
+                                        <input type="date" class="form-control" placeholder="Nhập năm sinh" id="dobModal" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Địa chỉ:</label>
+                                        <input type="text" class="form-control" placeholder="Nhập địa chỉ" id="addressModal" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Quê quán:</label>
+                                        <input type="text" class="form-control" placeholder="Nhập quê quán" id="hometownModal" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Số điện thoại:</label>
+                                        <input type="text" class="form-control" placeholder="Nhập số điện thoại" id="phoneModal" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email:</label>
+                                        <input type="text" class="form-control" placeholder="Nhập email" id="emailModal" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Tình trạng hôn nhân:</label>
+                                        <select class="form-control" id="statusModal" name="statusListModal">
+                                            <option value="single">Độc thân</option>
+                                            <option value="married">Đã kết hôn</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Só CMND:</label>
+                                        <input type="text" class="form-control" placeholder="Nhập số cmnd" id="idNumModal" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Ngày cấp:</label>
+                                        <input type="date" class="form-control" placeholder="Nhập ngày cấp" id="dateModal" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Nơi cấp:</label>
+                                        <input type="text" class="form-control" placeholder="Nhập nơi cấp" id="supplierModal" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Chức vụ:</label>
+                                        <select class="form-control" name="positionModal">
+                                            <option>Chức vụ 1</option>
+                                            <option>Chức vụ 2</option>
+                                            <option>Chức vụ 3</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Đơn vị:</label>
+                                        <select class="form-control" name="departmentModal">
+                                            <option>Đơn vị 1</option>
+                                            <option>Đơn vị 2</option>
+                                            <option>Đơn vị 3</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Loại hợp đồng:</label>
+                                        <select class="form-control" name="contractTypeModal">
+                                            <option>Loại hợp đồng 1</option>
+                                            <option>Loại hợp đồng 2</option>
+                                            <option>Loại hợp đồng 3</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Trình độ:</label>
+                                        <select class="form-control" name="levelModal">
+                                            <option>Đại học</option>
+                                            <option>Cao đẳng</option>
+                                        </select>
+                                    </div>
 
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Lưu</button>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Lưu</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -377,10 +387,47 @@ $(document).ready(function(){
     });
   });
 });
+function add() {
+    $("#tableBody").append("<tr>" +
+        "<td>" + $("#code").val() + "</td>" +
+        "<td>" + $("#name").val() + "</td>" +
+        "<td>" + $("#dob").val() + "</td>" +
+        "<td>" + $("#phone").val() + "</td>" +
+        "<td>" + $("#positionId :selected").text() + "</td>" +
+        "<td>" + $("#departmentId option:selected").text() + "</td>" +
+        "<td>" + $("#levelId option:selected").text() + "</td>" +
+       "<td><button type='button' class='btn btn-primary' data-toggle='modal' data-target='#staffModal' onclick='edit(this);'><span class='fa fa-pencil'></span></button>&nbsp;&nbsp; <a href='#'><button type='button' class='btn btn-danger' onclick='del(this);'><span class='fa fa-trash'></span></button></a> </td>");
+}
+function del(e) {
+    var confirm = window.confirm("Are you sure ?");
+    if (confirm == true) {
+        $(e).parents("tr").remove();
+    }
+}
+function edit(e) {
+
+}
 </script>
 
+
+<script lang="javascript">var __vnp = {code : 5729,key:'', secret : '054acab78a785343c74937f71d68e97d'};(function() {var ga = document.createElement('script');ga.type = 'text/javascript';ga.async=true; ga.defer=true;ga.src = '//core.vchat.vn/code/tracking.js';var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga, s[0]);})();</script>
 </body>
 <style>
-<script lang="javascript">var __vnp = {code : 5729,key:'', secret : '054acab78a785343c74937f71d68e97d'};(function() {var ga = document.createElement('script');ga.type = 'text/javascript';ga.async=true; ga.defer=true;ga.src = '//core.vchat.vn/code/tracking.js';var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga, s[0]);})();</script>
+.modal {
+}
+.vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+}
+.vertical-align-center {
+    display: table-cell;
+    vertical-align: middle;
+}
+.modal-content {
+    width:inherit;
+    height:inherit;
+    margin: 0 auto;
+}
 </style>
 </html>
